@@ -1,4 +1,4 @@
-parsertest: main.o symbol_table.o codegen.o parser.o lexer.o automata.o tokens.o
+coffeemaker: main.o symbol_table.o codegen.o parser.o lexer.o automata.o tokens.o
 	@gcc -o coffeemaker main.o symbol_table.o codegen.o parser.o lexer.o automata.o tokens.o
 
 main.o: main.c
