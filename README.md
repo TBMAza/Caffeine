@@ -220,6 +220,12 @@ Contributions are welcome! Since this is primarily a learning project, focus sho
 
 ---
 
+## Full language specification
+
+For a detailed specification of the Caffeine programming language, including syntax, semantics, and type system, please refer to the [LANGUAGE_SPECIFICATION.md](LANGUAGE_SPECIFICATION.md).
+
+---
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
