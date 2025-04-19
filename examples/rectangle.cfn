@@ -1,0 +1,21 @@
+output `input rectangle width: `;
+Flt width <- input;
+
+output `input height: `;
+Flt height <- input;
+
+if width <= 0 or height <= 0, {
+    output `\n[ERROR] width or height cannot be less or equal to zero!\n`;
+    exit 1;
+}
+
+Int i <- 0;
+loop i < height, {
+    Int j <- 0;
+    loop j < width, {
+        output `*`;
+        j <- j + 1;
+    }
+    output `\n`;
+    i <- i + 1;
+}

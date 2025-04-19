@@ -1,0 +1,36 @@
+// lowercase words that start with uppercase are non-terminals
+// uppercase words are tokens/terminals
+
+Program ::= Statement*
+
+Statement ::= Exit | Input | Output | Loop | Definition | If | Case
+
+Exit ::= EXIT NAT SEMI
+
+Input ::= INPUT WORD SEMI
+
+Output ::= OUTPUT STR [COMM WORD*] SEMI
+
+Loop ::= LOOP Expression COMM OCRL Program CCRL
+
+Definition ::= DTYPE WORD ASSN (Expression | INPUT) SEMI
+
+If ::= IF Expression COMM OCRL Program CCRL [ELSE OCRL Program CCRL]
+
+Case ::= CASE Expression COMM OCRL Program CCRL [ELSECASE COMM OCRL Program CCRL]
+
+Expression ::= LogOrExpr
+
+LogOrExpr ::= LogAndExpr OR LogAndExpr
+
+LogAndExpr ::= EqualityExpr AND EqualityExpr
+
+EqualityExpr ::= IneqExpr (NEQ | EQ) IneqExpr
+
+IneqExpr ::= AddExpr (GT | GEQ | LT | LEQ) AddExpr
+
+AddExpr ::= MultExpr (ADD | SUB) MultExpr
+
+MultExpr ::= PowerExpr (MUL | DIV | MOD ) PowerExpr
+
+PrimaryExpr ::= ORND Expression CRND | NAT | NINT | NREAL | PREAL | STR | WORD

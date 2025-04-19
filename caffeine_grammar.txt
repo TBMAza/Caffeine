@@ -1,0 +1,61 @@
+Control flow:
+	if (token type: IF)
+	else (token type: ELSE)
+	case (token type: CASE)
+	elsecase (token type: ELSECASE)
+	
+	loop (token type: LOOP)
+
+	exit (token type: EXIT)
+
+I/O:
+	input (token type: INPUT)
+	output (token type: OUTPUT)
+
+Data types (all of them are of the same token type: DTYPE):
+	Int
+	Flt
+	Str
+
+Parentheses:
+	( (token type: ORND)
+	) (token type: CRND)
+	{ (token type: OCRL)
+	} (token type: CCRL)
+
+Instruction delimiters:
+	; (token type: SEMI)
+	, (token type: COMM)
+
+Assingment:
+	<- (token type: ASSN)
+
+Comparison:
+	> (token type: GT)
+	< (token type: LT)
+	>= (token type: GEQ)
+	<= (token type: LEQ)
+	= (token type: EQ)
+	!= (token type: NEQ)
+
+Operators:
+	+ (token type: SUM)
+	- (token type: SUB)
+	* (token type: MUL)
+	/ (token type: DIV)
+	% (token type: MOD)
+	and (token type: AND)
+	or (token type: OR)
+	not (token type: NOT)
+
+Strings:
+	anything enclosed in backticks (`) (token type: STR)
+
+Numbers:
+	positive integer (token type: NAT)
+	negative integer (containing minus sign (-)) (token type: NINT)
+	positive real (containing dot (.)) (token type: PREAL)
+	negative real (containing minus sign (-) and dot (.)) (token type: NREAL)
+
+WORD:
+	anything that starts with _ or a letter and doesn't contain any of the above symbols

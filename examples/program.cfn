@@ -1,0 +1,24 @@
+Flt a <- 0.1;
+Flt b <- 0.2;
+Flt c <- 0.3;
+
+Flt d <- a + b * c;
+
+Flt e <- input;
+
+if d > e, {
+	exit 0;
+}
+
+exit 1;
+
+loop e > d, {
+	Str lol <- `aragosta`;
+}
+
+if 1 + 2 = 4, {
+	output `mangusta %lf`, a;
+}
+else, {
+	output `aragosta`;
+}
