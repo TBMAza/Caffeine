@@ -15,6 +15,11 @@ ASLNode* parse_program(Token* tokenlist, size_t* tl_curs, SymbolTableRecord** sy
 
     while(tokenlist[*tl_curs].name != EOTL && tokenlist[*tl_curs].name != CCRL) {
         switch(tokenlist[*tl_curs].name) {
+            case SEMI:
+                ++(*tl_curs);
+                continue;
+            break;
+
             case EXIT:
                 asl[asl_curs].instype = EXITS;
                 asl[asl_curs].instruction = (ExitNode*) malloc(sizeof(ExitNode));
