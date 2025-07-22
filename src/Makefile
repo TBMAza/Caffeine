@@ -14,7 +14,7 @@ codegen.o: codegen/codegen.c
 	@gcc codegen/codegen.c -o codegen.o -c
 
 parser.o: parser/parser.c
-	@gcc Parser/parser.c -o parser.o -c
+	@gcc parser/parser.c -o parser.o -c
 
 lexer.o: lexer/lexer.c
 	@gcc lexer/lexer.c -o lexer.o -c
