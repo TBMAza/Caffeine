@@ -1,6 +1,9 @@
 coffeemaker: main.o symbol_table.o codegen.o parser.o lexer.o automata.o tokens.o
 	@gcc -o coffeemaker main.o symbol_table.o codegen.o parser.o lexer.o automata.o tokens.o
 
+coffeemaker-debug: main.o symbol_table.o codegen.o parser.o lexer.o automata.o tokens.o
+	@gcc -g -o coffeemaker main.o symbol_table.o codegen.o parser.o lexer.o automata.o tokens.o
+
 main.o: main.c
 	@gcc main.c -o main.o -c
 
