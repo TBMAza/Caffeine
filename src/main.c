@@ -16,7 +16,7 @@
 int main(int argc, char** argv) {
 	// check if FILENAME was provided
 	if(argc < 3) {
-		printf("[COMPILER] [EXTERNAL ERROR] No file names provided.\n\n\n");
+		printf("[COMPILER] [EXTERNAL ERROR] Usage: ./coffeemaker <cfn file path> <generated executable name>\n\n\n");
 		exit(255);
 	}
 	// check if extension is correct
