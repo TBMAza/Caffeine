@@ -38,24 +38,24 @@ int main(int argc, char** argv) {
 	}
 
 	size_t st_size = SYMTAB_INIT_SIZE, st_curs = 0;
-    SymbolTableRecord** symbol_table = (SymbolTableRecord**) malloc(st_size * sizeof(SymbolTableRecord*));
-    if(!symbol_table) {
-        printf("[COMPILER] [INTERNAL ERROR] Symbol table allocation failed.\n\n\n");
-        goto End_Of_Program;
-    }
+    	SymbolTableRecord** symbol_table = (SymbolTableRecord**) malloc(st_size * sizeof(SymbolTableRecord*));
+    	if(!symbol_table) {
+        	printf("[COMPILER] [INTERNAL ERROR] Symbol table allocation failed.\n\n\n");
+        	goto End_Of_Program;
+    	}
 
-    printf("[COMPILER] [PROGRESS] Compilation started.\n");
+    	printf("[COMPILER] [PROGRESS] Compilation started.\n");
 	
 	printf("[COMPILER] [PROGRESS] Tokenizing...\n");
-		Token* tokenlist = lexer(program); size_t tl_curs = 0;
+	Token* tokenlist = lexer(program); size_t tl_curs = 0;
 	printf("[COMPILER] [PROGRESS] Tokenizing done.\n");
 	
 	printf("[COMPILER] [PROGRESS] Parsing...\n");
-		ASLNode* abstract_syntax_list = parse_program(tokenlist, &tl_curs, symbol_table, &st_size, &st_curs);
+	ASLNode* abstract_syntax_list = parse_program(tokenlist, &tl_curs, symbol_table, &st_size, &st_curs);
 	printf("[COMPILER] [PROGRESS] Parsing done.\n");
 
 	printf("[COMPILER] [PROGRESS] Generating executable...\n");
-		codegen(abstract_syntax_list, symbol_table, st_curs, EXENAME);
+	codegen(abstract_syntax_list, symbol_table, st_curs, EXENAME);
 	printf("[COMPILER] [PROGRESS] Executable generated.\n");
 	
 	printf("[COMPILER] [SUCCESS] Compilation successful.\n\n\n");
